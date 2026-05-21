@@ -31,5 +31,5 @@ mongoose
   })
   .catch((err) => {
     console.log("MongoDB Connection Error:")
-    console.lo
+    console.log(err)
   });
