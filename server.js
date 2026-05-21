@@ -8,7 +8,11 @@ const app = express();
 const authRoutes = require("./routes/authRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  credentials: true,
+}));
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
@@ -30,6 +34,6 @@ mongoose
     });
   })
   .catch((err) => {
-    console.log("MongoDB Connection Error:")
-    console.log(err)
+    console.log("MongoDB Connection Error:");
+    console.log(err);
   });
